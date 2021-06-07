@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+.App {
+    display: grid;
+    width: 100%;
+    background-color: $home-background;
+    grid-template-columns: repeat(auto-fill, minmax(0, 100vw));
+}
