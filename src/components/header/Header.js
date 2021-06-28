@@ -1,5 +1,6 @@
 import styles from './Header.module.scss';
 
+// header needs work
 const Header = () => {
     return (
         <div className={styles.header}>
