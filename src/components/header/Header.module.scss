@@ -1,7 +1,10 @@
 @import '../../variables.scss';
 
 .header {
-    grid-column: 1 / -1;
+    // grid-column: 1 / -1;
+    grid-area: header;
+    position: fixed;
+    width: 100vw;
 
     //padding: 0.5rem;
     background-color: $header-background;
