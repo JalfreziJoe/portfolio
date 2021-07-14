@@ -1,0 +1,49 @@
+@use "../../css/variables" as v;
+@use "../../css/mixins" as m;
+
+nav {
+    display: none;
+    @include m.breakpoint(tabletUp) {
+        display: block;
+        align-self: flex-end;
+        padding: 0 2em 0 0;
+    }
+    @include m.breakpoint(desktop) {
+        padding: 0 6.25em 0 3em;
+    }
+
+    ul {
+        margin: 0.7em 0 0.5em;
+        text-align: center;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    li {
+        display: inline;
+        border-right: 0.15em solid v.$nav-colour;
+        list-style: none;
+    }
+
+    li:last-child {
+        border-right: none;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0.5em 1.1em;
+        text-decoration: none;
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    a:visited,
+    a:link {
+        color: v.$nav-colour;
+    }
+
+    a.active {
+        color: v.$nav-active-colour;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,57 @@
+@use '../../css/mixins' as m;
+
+.title {
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-image: url('../../images/title-splodge.png');
+    width: 236px;
+    height: 45px;
+    @include m.breakpoint(tabletUp) {
+        width: 472px;
+        height: 91px;
+        transform: translateX(-50%);
+    }
+    grid-area: title;
+    z-index: 10;
+    position: relative;
+    transform: translateX(-30%);
+}
+
+.title-text {
+    font-family: 'Commissioner', sans-serif;
+    // padding-left: 3.6rem;
+    font-size: 23pt;
+    line-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translate(calc(30% + 3.6rem), -56%);
+
+    @include m.breakpoint(tabletUp) {
+        transform: translate(calc(50% + 3.6rem), -56%);
+        font-size: 2.5rem;
+        line-height: normal;
+    }
+}
+
+.title-background__bio {
+    @include m.breakpoint(tabletUp) {
+    }
+}
+
+.title-background__skills {
+}
+
+.title-background__highlight {
+    transform: translateX(-15%);
+    @include m.breakpoint(tabletUp) {
+        transform: translateX(-40%);
+    }
+    .title-text {
+        transform: translate(calc(15% + 3.6rem), -56%);
+        @include m.breakpoint(tabletUp) {
+            transform: translate(calc(40% + 3.6rem), -56%);
+        }
+    }
+}

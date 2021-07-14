@@ -1,5 +1,7 @@
 import styles from './Header.module.scss';
 
+import Navigation from './Navigation';
+
 // header needs work
 const Header = () => {
     return (
@@ -8,19 +10,7 @@ const Header = () => {
                 <h1>
                     Joe<span>Noordally</span>
                 </h1>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="http://www.nowhere.com">Home</a>
-                        </li>
-                        <li>
-                            <a href="http://www.nowhere.com">Work</a>
-                        </li>
-                        <li>
-                            <a href="http://www.nowhere.com">About</a>
-                        </li>
-                    </ul>
-                </nav>
+                <Navigation />
             </div>
         </div>
     );

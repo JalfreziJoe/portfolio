@@ -1,0 +1,40 @@
+@use "../../css/mixins" as m;
+
+.bio__wrapper {
+    display: grid;
+    grid-template-columns: 3.6em auto 3.6em;
+
+    grid-template-areas:
+        'title title title'
+        '. content1 .'
+        '. content2 .';
+    @include m.breakpoint(tabletUp) {
+        grid-template-columns: 3.6em auto 2em auto 3.6em;
+        grid-template-areas:
+            'title title title title title'
+            '. content1 . content2 .';
+    }
+
+    padding-top: 2em;
+    padding-bottom: 4em;
+    row-gap: 2em;
+
+    background-color: #fff;
+
+    .bio-text {
+        color: #000;
+        font-weight: 400;
+        font-size: 1rem;
+        //margin: 0 3.6em;
+    }
+
+    .para1 {
+        grid-area: content1;
+        // margin-left: 3.6em;
+    }
+
+    .para2 {
+        grid-area: content2;
+        // margin-right: 3em;
+    }
+}

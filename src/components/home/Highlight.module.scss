@@ -1,0 +1,16 @@
+@use '../../css/mixins' as m;
+
+.highlight__wrapper {
+    height: 300px;
+    width: 100%;
+    background-color: #fff;
+    @include m.breakpoint(tabletUp) {
+        height: 600px;
+        max-width: 1440px;
+    }
+}
+
+.gallery__wrapper {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,32 @@
+.skills {
+    background-color: #fff;
+}
+
+.skills-wrapper {
+    display: grid;
+    grid-gap: 0.5em;
+    row-gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+    justify-items: center;
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+.skill-container {
+    color: #000;
+    display: inline-block;
+
+    img {
+        width: 5em;
+        height: auto;
+        // border-radius: 50%;
+        // border: 2px solid #000;
+    }
+
+    p {
+        padding: 0;
+        margin: 0.6em 0 0 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,19 @@
+@use '../../css/mixins' as m;
+
+.footer {
+    background-color: #ededed;
+    width: 100%;
+
+    color: #000;
+}
+
+p {
+    margin: 0;
+    padding: 1em 1em;
+    font-size: 0.8rem;
+    @include m.breakpoint(tabletUp) {
+        padding: 1.625em 3.6em;
+        font-size: 1.1rem;
+    }
+    font-weight: 100;
+}

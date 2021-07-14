@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500;600&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@500;600&family=Montserrat:wght@200;400;500;600&display=swap');
 
 html,
 body {
@@ -11,4 +11,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    background-color: #f5f5f5;
+    background-image: url(./images/handmade-paper.png);
 }
