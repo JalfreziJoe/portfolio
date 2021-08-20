@@ -8,7 +8,7 @@ import Highlight from '../components/home/Highlight';
 const Home = () => {
     return (
         <div className={styles['home-container']}>
-            <Hero />
+            <Hero heroType="hero" />
             <Bio />
             <Skills />
             <Highlight />

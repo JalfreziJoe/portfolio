@@ -1,0 +1,36 @@
+@use '../css/mixins' as m;
+
+.about-container {
+    grid-area: main;
+    background-color: #fff;
+
+    .about-content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+
+        section {
+            margin-top: 1em;
+            text-align: center;
+            color: #000;
+            img {
+                object-fit: contain;
+                width: 70%;
+            }
+        }
+
+        .about-text {
+            align-self: flex-start;
+            text-align: left;
+
+            p {
+                font-weight: 400;
+                padding: 1em 1em;
+                @include m.breakpoint(tabletUp) {
+                    padding: 1em 2em;
+                }
+            }
+        }
+    }
+}

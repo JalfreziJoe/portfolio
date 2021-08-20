@@ -1,0 +1,13 @@
+@use '../../../css/mixins' as m;
+
+.work-slide {
+    position: relative;
+
+    // width: 22.5em;
+    // height: 15.6em;
+    background-color: blueviolet;
+    // @include m.breakpoint(tabletUp) {
+    //     width: 45em;
+    //     height: 31.25em;
+    // }
+}

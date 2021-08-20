@@ -1,0 +1,15 @@
+@use '../../../css/mixins' as m;
+.work-gallery__wrapper {
+    // width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-gap: 1px;
+    grid-template-columns: minmax(22.5em, 45em);
+    grid-template-rows: minmax(15.6em, 31.25em);
+    // grid-template-rows: ;
+    // @include m.breakpoint(tabletUp) {
+    //     grid-template-columns: minmax(auto, 45em);
+    // }
+}

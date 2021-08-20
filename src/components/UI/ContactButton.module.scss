@@ -1,0 +1,21 @@
+button {
+    text-transform: uppercase;
+    color: #2a658a;
+    background-color: #fff;
+    border: #2a658a 2px solid;
+    border-radius: 25px;
+    text-align: center;
+
+    font-size: 1rem;
+    padding: 0.5em 2em;
+    cursor: pointer;
+    margin: 2em;
+    display: block;
+    align-self: center;
+    justify-self: center;
+}
+
+button:hover {
+    background-color: #2a658a;
+    color: #fff;
+}

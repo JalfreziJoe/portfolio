@@ -8,8 +8,96 @@
     @include m.breakpoint(tabletUp) {
         height: 575px;
     }
+
     position: relative;
     background-color: #fff;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hero-frame {
+    position: absolute;
+    width: 303px;
+    height: 294px;
+    background-image: url('../../images/hero-frame-mobile.png');
+    @include m.breakpoint(tabletUp) {
+        width: 666px;
+        height: 515px;
+        background-image: url('../../images//hero-frame.png');
+    }
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    h3,
+    h2 {
+        margin: 0;
+        padding: 0;
+        color: #9a7aa0;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    h3 {
+        font-size: 0.9rem;
+        @include m.breakpoint(tabletUp) {
+            font-size: 2.25rem;
+        }
+    }
+
+    h2 {
+        font-size: 4.1rem;
+        @include m.breakpoint(tabletUp) {
+            font-size: 9.8rem;
+        }
+        color: #513b56;
+        font-weight: 800;
+    }
+}
+
+.hero-frame__blue {
+    h2 {
+        color: #2a658a;
+    }
+    h3 {
+        color: #acacac;
+    }
+
+    .hero-icons {
+        width: 30%;
+        height: 2em;
+        @include m.breakpoint(tabletUp) {
+            width: 20%;
+        }
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        img {
+            width: 2em;
+            height: 2em;
+            @include m.breakpoint(tabletUp) {
+                width: 3em;
+                height: 3em;
+            }
+            object-fit: contain;
+        }
+    }
 }
 
 .scroll-down-icon {

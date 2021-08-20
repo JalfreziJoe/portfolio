@@ -1,4 +1,6 @@
+import WorkGallery from '../components/UI/work-gallery/WorkGallery';
+
 const Work = () => {
-    return <h2>Work page</h2>;
+    return <WorkGallery />;
 };
 export default Work;
