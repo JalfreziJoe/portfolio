@@ -1,0 +1,245 @@
+@use '../css/variables' as v;
+@use '../css/mixins' as m;
+
+.container {
+    grid-area: main;
+    background-color: v.$work-detail-background-colour;
+    color: v.$text-colour;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+        'breadcrumb'
+        'header'
+        'texts'
+        'gallery'
+        'links';
+    align-items: start;
+    justify-items: center;
+
+    .bread-crumb {
+        grid-area: breadcrumb;
+        justify-self: start;
+        margin: 1em 1em 1em 2em;
+        font-size: 0.9rem;
+        a,
+        a:active,
+        a:visited {
+            color: v.$text-colour;
+        }
+    }
+
+    header {
+        grid-area: header;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #fff, #eee);
+
+        .header-texts {
+            margin: 1em;
+            text-align: left;
+
+            max-width: 80%;
+            width: 100%;
+
+            h2 {
+                font-family: v.$font-commissioner;
+                color: v.$work-detail-title-colour;
+                font-weight: 400;
+                margin: 0;
+                font-size: 3rem;
+                padding-bottom: 0.5rem;
+            }
+
+            h4 {
+                margin: 0;
+
+                padding-bottom: 0.1rem;
+                font-weight: 400;
+                font-size: 1.5rem;
+                font-family: v.$font-commissioner;
+            }
+            p {
+            }
+        }
+
+        .header-image {
+            align-self: center;
+            justify-self: flex-end;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+
+        @include m.breakpoint(desktop) {
+            flex-flow: row nowrap;
+
+            align-items: flex-start;
+            background: linear-gradient(to bottom, #fff 70%, #eee);
+
+            .header-texts {
+                flex: 2;
+                margin: 0;
+                margin-left: 2em;
+                margin-top: 5em;
+                margin-right: 2em;
+
+                h2 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 3rem;
+                    font-weight: 500;
+                }
+
+                h4 {
+                    margin: 0;
+                    padding: 0;
+                    padding-bottom: 0.3rem;
+
+                    font-size: 1.5rem;
+                }
+                p {
+                    padding: 0;
+                    line-height: 1.5rem;
+                }
+            }
+
+            .header-image {
+                flex: 3;
+                align-self: center;
+                justify-self: flex-end;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 2em;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .main-texts {
+        grid-area: texts;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: space-between;
+        max-width: 80%;
+
+        h5 {
+            margin: 0;
+            padding: 1.5rem 0 0 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        p {
+            padding: 0;
+            line-height: 1.3rem;
+        }
+
+        @include m.breakpoint(tabletUp) {
+            justify-content: flex-start;
+            align-items: space-between;
+
+            margin: 3em;
+            gap: 1em;
+
+            div {
+                max-width: 100%;
+            }
+
+            h5 {
+                margin: 0;
+                padding: 0;
+                font-weight: 500;
+                line-height: 3rem;
+                font-size: 2rem;
+                max-width: 70%;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+                line-height: 1.5rem;
+            }
+        }
+    }
+
+    .image-gallery {
+        grid-area: gallery;
+        width: 100%;
+        max-width: 100%;
+        @include m.breakpoint(desktop) {
+            //min-height: 575px;
+        }
+        background-color: #202020;
+    }
+
+    .links {
+        grid-area: links;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 2em;
+        justify-content: center;
+        align-content: center;
+
+        a {
+            background-color: #2a658a;
+            color: #fff;
+            border: #2a658a 2px solid;
+            border-radius: 25px;
+            text-align: center;
+
+            font-size: 1rem;
+            padding: 2% 1%;
+            cursor: pointer;
+            margin: 1em;
+            display: block;
+
+            text-decoration: none;
+        }
+
+        @include m.breakpoint(desktop) {
+            a {
+                text-transform: uppercase;
+                color: #2a658a;
+                background-color: #fff;
+                border: #2a658a 2px solid;
+                border-radius: 25px;
+                text-align: center;
+
+                font-size: 1rem;
+                padding: 0.5em 2em;
+                cursor: pointer;
+                margin: 2em;
+                display: block;
+
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: #2a658a;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.container__loading {
+    background-color: #efefef;
+
+    height: 100vh;
+}

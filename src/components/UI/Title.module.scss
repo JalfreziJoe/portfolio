@@ -11,9 +11,11 @@
     @include m.breakpoint(tabletUp) {
         width: 472px;
         height: 91px;
-        transform: translateX(-50%);
+        //transform: translateX(-50%);
     }
     grid-area: title;
+    color: #fff;
+    font-size: 23pt;
     z-index: 10;
     position: relative;
     transform: translateX(-30%);
@@ -47,10 +49,40 @@
 .title-background__skills {
 }
 
+.title-background__works {
+    color: #fff;
+    transform: translateX(-12%);
+
+    @include m.breakpoint(tabletUp) {
+        transform: translateX(-10%);
+    }
+    .title-text {
+        font-size: 18pt;
+        transform: translate(calc(10% + 3rem), -56%);
+        @include m.breakpoint(tabletUp) {
+            font-size: 23pt;
+            transform: translate(calc(30% + 3.6rem), -56%);
+        }
+    }
+}
+
 .title-background__highlight {
     transform: translateX(-15%);
     @include m.breakpoint(tabletUp) {
-        transform: translateX(-40%);
+        transform: translateX(-30%);
+    }
+    .title-text {
+        transform: translate(calc(15% + 3.6rem), -56%);
+        @include m.breakpoint(tabletUp) {
+            transform: translate(calc(40% + 3.6rem), -56%);
+        }
+    }
+}
+
+.title-background__contact {
+    transform: translateX(-15%);
+    @include m.breakpoint(tabletUp) {
+        transform: translateX(-30%);
     }
     .title-text {
         transform: translate(calc(15% + 3.6rem), -56%);

@@ -2,10 +2,12 @@
 @use '../../css/mixins' as m;
 
 .hero__wrapper {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    max-width: 1920px;
+
     height: 338px;
-    @include m.breakpoint(tabletUp) {
+    @include m.breakpoint(desktop) {
         height: 575px;
     }
 
@@ -13,23 +15,51 @@
     background-color: #fff;
 }
 
-.hero-image {
-    position: absolute;
+.hero-image-wrapper {
+    position: relative;
     width: 100%;
     height: 100%;
+    @include m.breakpoint(desktop) {
+        max-width: 1440px;
+        max-height: 575px;
+    }
+    overflow: hidden;
 
-    img {
+    .hero-image {
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
+
+        filter: blur(50px);
+        //background-image: url('../../images/liquid-mask1.svg');
+
+        background-repeat: no-repeat;
+        //mask-image: url('../../images/liquidMask1.png');
+        //mask-image: linear-gradient(to bottom, transparent 10%, black);
+        //mask-image: url('../../images/hero-image-main.jpg');
+        //mask-size: 100% 300%;
+        //mask-repeat: no-repeat;
+        //mask-position: 0 0;
+    }
+
+    .home-image {
+        background-image: url('../../images/hero-image-main.jpg');
+    }
+
+    .about-image {
+        background-image: url('../../images/about-image-main.jpg');
     }
 }
 
 .hero-frame {
+    visibility: hidden;
     position: absolute;
     width: 303px;
     height: 294px;
     background-image: url('../../images/hero-frame-mobile.png');
-    @include m.breakpoint(tabletUp) {
+    @include m.breakpoint(desktop) {
         width: 666px;
         height: 515px;
         background-image: url('../../images//hero-frame.png');
@@ -52,17 +82,18 @@
         color: #9a7aa0;
         font-weight: 400;
         text-transform: uppercase;
+        visibility: hidden;
     }
     h3 {
         font-size: 0.9rem;
-        @include m.breakpoint(tabletUp) {
+        @include m.breakpoint(desktop) {
             font-size: 2.25rem;
         }
     }
 
     h2 {
         font-size: 4.1rem;
-        @include m.breakpoint(tabletUp) {
+        @include m.breakpoint(desktop) {
             font-size: 9.8rem;
         }
         color: #513b56;
@@ -81,12 +112,16 @@
     .hero-icons {
         width: 30%;
         height: 2em;
-        @include m.breakpoint(tabletUp) {
+        @include m.breakpoint(desktop) {
             width: 20%;
         }
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+
+        a {
+            visibility: hidden;
+        }
 
         img {
             width: 2em;
@@ -101,6 +136,7 @@
 }
 
 .scroll-down-icon {
+    visibility: hidden;
     text-decoration: none;
     position: absolute;
     left: 50%;

@@ -1,0 +1,30 @@
+@use '../../css/variables' as v;
+.nav-button {
+    border: none;
+    padding: 0.5em 1.1em;
+    margin: 0;
+    color: v.$nav-active-colour;
+    font-size: 1.25rem;
+    font-weight: 400;
+    background: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.active-underline {
+    width: 98%;
+    margin: 0 auto;
+    height: 4px;
+    margin-top: 0px;
+    background-color: v.$nav-active-colour;
+    visibility: hidden;
+}
+
+.active {
+    color: v.$nav-active-colour;
+    font-weight: 600;
+
+    .active-underline {
+        visibility: visible;
+    }
+}

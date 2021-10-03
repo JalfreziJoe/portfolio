@@ -1,31 +1,47 @@
-@use "../../css/variables" as v;
-@use "../../css/mixins" as m;
+@use '../../css/variables' as v;
+@use '../../css/mixins' as m;
 
 .header {
     grid-area: header;
 
     width: 100%;
+
     max-height: 56px;
     height: 56px;
 
     //padding: 0.5rem;
     background-color: v.$header-background;
     color: #111;
+    // position: fixed;
+    // display: flex;
+    // justify-content: center;
+    // top: 0;
+    // left: 0;
+    //z-index: 50;
 
     .header__wrapper {
+        position: fixed;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
         width: 100%;
-        max-width: 1920px;
-        height: 100%;
-        margin: 0 0;
+        @include m.breakpoint(desktop) {
+            max-width: 1440px;
+        }
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 56px;
+        // margin: 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-flow: row nowrap;
+        z-index: 50;
     }
 }
 
 h1 {
-    font-family: 'Commissioner', sans-serif;
+    font-family: v.$font-commissioner;
+    font-weight: 500;
     color: v.$logo-colour1;
     padding: 0 1.75em 0 1em;
     @include m.breakpoint(tabletUp) {

@@ -1,36 +1,11 @@
-import { NavLink } from 'react-router-dom';
-import classes from './Navigation.module.scss';
-
 import MobileMenu from './MobileMenu';
+import NavList from './NavList';
 
-const Navigation = () => {
+const Navigation = ({ onOpenMobileMenu, onCloseMobileMenu }) => {
     return (
         <>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink exact activeClassName={classes.active} to="/">
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName={classes.active} to="/work">
-                            Work
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName={classes.active} to="/about">
-                            About
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName={classes.active} to="/contact">
-                            Contact
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
-            <MobileMenu />
+            <NavList navType="desktop" />
+            <MobileMenu onOpenMobileMenu={onOpenMobileMenu} onCloseMobileMenu={onCloseMobileMenu} />
         </>
     );
 };

@@ -1,4 +1,5 @@
 @use '../css/mixins' as m;
+@use '../css/variables' as v;
 
 .about-container {
     grid-area: main;
@@ -6,14 +7,11 @@
 
     .about-content {
         display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-content: center;
 
         section {
             margin-top: 1em;
             text-align: center;
-            color: #000;
+            color: #252525;
             img {
                 object-fit: contain;
                 width: 70%;
@@ -21,16 +19,160 @@
         }
 
         .about-text {
-            align-self: flex-start;
+            padding: 0 3em;
             text-align: left;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            h3 {
+                font-weight: 500;
+            }
+            b {
+                font-weight: 450;
+            }
+            .column1 {
+                order: 2;
+            }
 
+            .column2 {
+                order: 1;
+            }
+            ul {
+                padding: 0;
+                margin: 2em 0.5em;
+            }
+
+            li {
+                list-style: none;
+                display: flex;
+                justify-content: flex-start;
+                gap: 0.3em;
+                align-items: center;
+                margin-bottom: 0.5em;
+            }
             p {
-                font-weight: 400;
-                padding: 1em 1em;
-                @include m.breakpoint(tabletUp) {
-                    padding: 1em 2em;
+                padding: 1em;
+                line-height: 1.5rem;
+            }
+
+            a,
+            a:active,
+            a:visited {
+                color: v.$links;
+            }
+            @include m.breakpoint(tabletUp) {
+                grid-template-columns: 3fr 1fr;
+                .column1 {
+                    order: 1;
+                }
+
+                .column2 {
+                    order: 2;
                 }
             }
+            grid-auto-rows: auto;
+
+            .column {
+                padding: 0 1em;
+                p {
+                    font-weight: 400;
+                    padding: 1em 1em;
+                    @include m.breakpoint(tabletUp) {
+                        padding: 1em 2em;
+                    }
+                }
+            }
+
+            .coloured-block {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                @include m.breakpoint(desktop) {
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+
+                margin: 2em 0;
+
+                background-color: #e0f5fd;
+
+                img {
+                    min-width: 250px;
+                    width: 30%;
+                    max-width: 40%;
+                    padding: 2em;
+                    transform: rotate(5deg);
+                }
+            }
+
+            .photo-box-content {
+                // border-radius: 2px;
+                // background-color: #4e3c5485;
+                padding: 0.2em;
+                color: #252525;
+                display: flex;
+                flex-flow: column nowrap;
+                @include m.breakpoint(tabletUp) {
+                    flex-flow: column wrap;
+                    align-items: center;
+                }
+                align-items: flex-start;
+                justify-content: center;
+
+                h3 {
+                    margin: 1em;
+                    padding: 1em;
+                    align-self: flex-start;
+                    position: relative;
+                    color: #fff;
+                    font-weight: 500;
+
+                    &::before,
+                    &::after {
+                        background-color: v.$logo-colour1;
+                        content: ' ';
+                        position: absolute;
+                        z-index: 1;
+                        width: 250%;
+                        height: 100%;
+                        transform: translate(-20%, -20%);
+                    }
+                    &::after {
+                        background-color: v.$logo-colour2;
+                        transform: translate(0%, 0%);
+                    }
+
+                    div {
+                        position: absolute;
+                        z-index: 2;
+                        padding: 0.5rem;
+                    }
+                }
+
+                img {
+                    max-width: 50%;
+                    min-width: 30%;
+                    align-self: center;
+                    @include m.breakpoint(tabletUp) {
+                        max-width: 100%;
+                        min-width: 50%;
+                    }
+                    padding: 0.5em;
+                    transform: rotate(10deg);
+                }
+
+                .rotate__back {
+                    transform: rotate(-10deg);
+                }
+            }
+        }
+
+        .contact-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }

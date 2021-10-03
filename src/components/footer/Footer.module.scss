@@ -5,15 +5,16 @@
     width: 100%;
     grid-area: footer;
     color: #000;
-}
-
-p {
-    margin: 0;
-    padding: 1em 1em;
-    font-size: 0.8rem;
-    @include m.breakpoint(tabletUp) {
-        padding: 1.625em 3.6em;
-        font-size: 1.1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    p {
+        margin: 0;
+        padding: 1em 1em;
+        font-size: 0.8rem;
+        @include m.breakpoint(tabletUp) {
+            padding: 1.625em 3.6em;
+            font-size: 1.1rem;
+        }
+        font-weight: 100;
     }
-    font-weight: 100;
 }

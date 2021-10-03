@@ -1,13 +1,56 @@
 @use '../../../css/mixins' as m;
+@use '../../../css/variables' as v;
 
 .work-slide {
     position: relative;
-
+    width: 100%;
     // width: 22.5em;
     // height: 15.6em;
-    background-color: blueviolet;
+    background-color: white;
     // @include m.breakpoint(tabletUp) {
     //     width: 45em;
     //     height: 31.25em;
     // }
+    display: flex;
+    flex-flow: column nowrap;
+    flex-shrink: 0;
+    margin-bottom: 2em;
+    border: 1px solid v.$work-border-colour;
+
+    &__image-container {
+        padding-bottom: 100%;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__panel {
+        position: relative;
+    }
+
+    h2,
+    p {
+        padding-left: 1.5em;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: #393939;
+    }
 }

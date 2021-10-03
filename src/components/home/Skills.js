@@ -5,21 +5,41 @@ import classes from './Skills.module.scss';
 const DUMMY_DATA = [
     {
         id: 's1',
-        skillName: 'Vue',
-        skillIcon: 'vue.svg',
+        skillName: 'HTML',
+        skillIcon: 'html-5.svg',
     },
     {
         id: 's2',
-        skillName: 'Vue',
-        skillIcon: 'vue.svg',
+        skillName: 'CSS',
+        skillIcon: 'css-3.svg',
     },
     {
         id: 's3',
-        skillName: 'Vue',
-        skillIcon: 'vue.svg',
+        skillName: 'Javascript',
+        skillIcon: 'javascript.svg',
     },
     {
         id: 's4',
+        skillName: 'React',
+        skillIcon: 'react.svg',
+    },
+    {
+        id: 's5',
+        skillName: 'NodeJS',
+        skillIcon: 'nodejs.svg',
+    },
+    {
+        id: 's6',
+        skillName: 'Express',
+        skillIcon: 'express.svg',
+    },
+    {
+        id: 's7',
+        skillName: 'MongoDB/\nMongoose',
+        skillIcon: 'mongodb.svg',
+    },
+    {
+        id: 's8',
         skillName: 'Vue',
         skillIcon: 'vue.svg',
     },
@@ -35,7 +55,7 @@ const Skills = () => {
                     <div className={classes['skill-container']} key={skill.id}>
                         {console.log(images('./' + skill.skillIcon))}
                         <img src={images('./' + skill.skillIcon).default} alt={skill.skillName} />
-                        <p>{skill.skillName}</p>
+                        {/* <p>{skill.skillName}</p> */}
                     </div>
                 ))}
             </div>

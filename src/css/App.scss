@@ -1,12 +1,10 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 .App {
     display: grid;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    max-width: 1440px;
-    position: relative;
-    margin: 0 auto;
+
     overflow: visible;
     background-color: v.$home-background;
     background-image: url('../images/absurdity.png');
@@ -17,4 +15,25 @@
         'header'
         'main'
         'footer';
+
+    overflow-x: hidden;
+    //transform: translateX(-240px);
+    transition: transform 0.3s ease;
+    //left: -240px;
+
+    &__openMobileMenu {
+        transform: translateX(-180px);
+    }
+
+    &__closeMobileMenu {
+        transform: translateX(0px);
+    }
+
+    &__main {
+        height: 100%;
+        width: 100%;
+
+        position: relative;
+        margin: 0 auto;
+    }
 }

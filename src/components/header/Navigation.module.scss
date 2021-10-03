@@ -1,7 +1,7 @@
 @use "../../css/variables" as v;
 @use "../../css/mixins" as m;
 
-nav {
+.desktop {
     display: none;
     @include m.breakpoint(tabletUp) {
         display: block;
@@ -28,22 +28,20 @@ nav {
     li:last-child {
         border-right: none;
     }
+}
 
-    a {
-        display: inline-block;
-        padding: 0.5em 1.1em;
-        text-decoration: none;
-        font-size: 1.25rem;
-        font-weight: 400;
+.mobile {
+    padding-top: 2em;
+    ul {
+        margin: 0.7em 0 0.5em;
+        text-align: center;
+        padding: 0;
+        white-space: nowrap;
     }
 
-    a:visited,
-    a:link {
-        color: v.$nav-colour;
-    }
+    li {
+        display: block;
 
-    a.active {
-        color: v.$nav-active-colour;
-        font-weight: 500;
+        list-style: none;
     }
 }

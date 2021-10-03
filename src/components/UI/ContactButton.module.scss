@@ -1,4 +1,4 @@
-button {
+.contact-button {
     text-transform: uppercase;
     color: #2a658a;
     background-color: #fff;
@@ -15,7 +15,7 @@ button {
     justify-self: center;
 }
 
-button:hover {
+.contact-button:hover {
     background-color: #2a658a;
     color: #fff;
 }
